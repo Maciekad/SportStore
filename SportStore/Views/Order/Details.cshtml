@@ -1,0 +1,29 @@
+﻿@model OrderViewModel
+@{
+    ViewBag.Title = "Szczegóły zamówienia";
+    Layout = "_Layout";
+}
+<div class="card">
+    <div class="card-block" style="padding: 10px 0px 0px 18px;">
+        <a class="btn btn-sm btn-primary" href='@Url.Action("List", "Order")' role="button">&lt;&lt; Cofnij</a>
+    </div>
+    <div class="card-body">
+        <h2>Zamówienie nr: @Model.OrderId</h2>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th>Produkt</th>
+                <th>Ilość</th>
+                <th>Cena</th>
+            </tr>
+            @foreach (OrderLineViewModel o in Model.Lines)
+            {
+                <tr>
+                    <td>@o.Product.Name</td>
+                    <td>@o.Quantity</td>
+                    <td>@o.Product.UnitCost</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+

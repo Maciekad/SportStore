@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <StartupObject>SportStore.Program</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20200614104137_UpdateProductTable.cs" />
+    <Compile Remove="Migrations\20200614104137_UpdateProductTable.Designer.cs" />
+    <Compile Remove="Migrations\20200615090229_AddSupplierTable.cs" />
+    <Compile Remove="Migrations\20200615090229_AddSupplierTable.Designer.cs" />
+    <Compile Remove="Migrations\20200615092403_AddSupplierTableConstraints.cs" />
+    <Compile Remove="Migrations\20200615092403_AddSupplierTableConstraints.Designer.cs" />
+    <Compile Remove="Migrations\20200615093143_UpdateSupplierTable.cs" />
+    <Compile Remove="Migrations\20200615093143_UpdateSupplierTable.Designer.cs" />
+    <Compile Remove="Migrations\20200616114326_DatabaseUpdate1.cs" />
+    <Compile Remove="Migrations\20200616114326_DatabaseUpdate1.Designer.cs" />
+    <Compile Remove="Migrations\20200616114503_AddSupplierIdColumn.cs" />
+    <Compile Remove="Migrations\20200616114503_AddSupplierIdColumn.Designer.cs" />
+    <Compile Remove="Migrations\20200616115319_AddSupplierIdColumn.cs" />
+    <Compile Remove="Migrations\20200616115319_AddSupplierIdColumn.Designer.cs" />
+    <Compile Remove="Migrations\20200616115602_AddSupplierIdColumn.cs" />
+    <Compile Remove="Migrations\20200616115602_AddSupplierIdColumn.Designer.cs" />
+    <Compile Remove="Migrations\20200616115855_UpdateDatabase.cs" />
+    <Compile Remove="Migrations\20200616115855_UpdateDatabase.Designer.cs" />
+    <Compile Remove="Migrations\20200616120735_UpdateDatabase1.cs" />
+    <Compile Remove="Migrations\20200616120735_UpdateDatabase1.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="3.1.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<OrderViewModel>
+@{ 
+    ViewBag.Title = "Zamówienia";
+    Layout = "_Layout";
+}
+<h2>Lista zamówień</h2>
+@if (Model.Count() > 0)
+{
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>Numer</th>
+            <th>Data złożenia</th>
+            <th>Kwota</th>
+            <th>Klient</th>
+            <th>Miasto</th>
+            <th>Kod pocztowy</th>
+            <th>Akcje</th>
+        </tr>
+        @foreach (OrderViewModel o in Model)
+        {
+            <tr>
+                <td>@o.OrderId</td>
+                <td>@o.Date</td>
+                 <td>
+                    @o.TotalValue.ToString("c")
+                </td>
+                <td>@o.FullName</td>
+                <td>@o.City</td>
+                <td>@o.Zip</td>
+                <td>
+                    <form asp-action="Details" method="get">
+                        <input type="hidden" name="OrderId" value="@o.OrderId" />
+                        <button type="submit" class="btn btn-sm btn-primary">
+                            Szczegóły
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </table>
+}

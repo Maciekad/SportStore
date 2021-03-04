@@ -1,0 +1,45 @@
+﻿@model IEnumerable<SportStoreDal.Models.Customer>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<hr />
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmailAdress)
+            </th>
+           
+            <th>
+
+                <a asp-action="AddOrEdit" class="btn btn-outline-success"><i class="far fa-plus-square"></i>Add User</a>
+
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmailAdress)
+                </td>
+               
+                <td>
+                    <a asp-action="AddOrEdit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="text-danger ml-1" onclick="return confirm(" Are you sure to delete this record?")">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

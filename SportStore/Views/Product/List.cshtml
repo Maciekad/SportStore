@@ -1,0 +1,8 @@
+﻿@model SportStoreDal.Models.ViewModels.ProductListViewModel
+
+
+@foreach (var p in Model.Products)
+{
+    @Html.Partial("ProductSummary", p);
+}
+

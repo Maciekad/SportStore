@@ -1,0 +1,17 @@
+﻿@model ShoppingCart
+
+<div class="">
+    @if (Model.Records.Count() > 0)
+    {
+        <small class="navbar-text">
+            <b>Koszyk:</b>
+            @Model.Records.Sum(x => x.Quantity) produkt(y)
+            @Model.ComputeTotalValue().ToString("c")
+        </small>
+    }
+
+    <a class="btn btn-sm btn-secondary navbar-btn"
+       asp-controller="ShoppingCart" asp-action="Index">
+        <i class="fa fa-shopping-cart">Koszyk</i>
+    </a>
+</div>
